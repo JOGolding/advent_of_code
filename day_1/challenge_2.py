@@ -9,7 +9,6 @@ def readFile(fileName):
     return nums
 
 numArray = readFile('day_1\input.txt')
-window = 3
 total = 0
 prevTotal = 0
 increaseCount = 0
