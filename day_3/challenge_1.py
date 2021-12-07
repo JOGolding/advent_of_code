@@ -1,6 +1,3 @@
-from typing import ItemsView
-
-
 file='day_3/input.txt'
 
 def readFile(fileName):
