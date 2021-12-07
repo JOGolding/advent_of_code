@@ -3,27 +3,24 @@ from typing import ItemsView
 
 file='day_3/input.txt'
 
-def splitBinary(string):
-    return [x for x in string]
-
 def readFile(fileName):
     fileObj = open(fileName, 'r')
-    numsString = fileObj.read().splitlines()
-    numsSplit = []
-    for i in numsString:
-        numsSplit.append(splitBinary(i))
+    binaryStrings = fileObj.read().splitlines()
+    binaryStringsSplit = []
+    for item in binaryStrings:
+        binaryStringsSplit.append([char for char in item])
     fileObj.close()
-    return numsSplit
+    return binaryStringsSplit
 
 def extract(lst, n):
     return [item[n] for item in lst]
 
-numSplitList = readFile(file)
+binarySplitList = readFile(file)
 mostCommonBits = ''
 
-for i in range(len(numSplitList[0])):
-    for x in numSplitList:
-        extractedList = extract(numSplitList, i)
+for i in range(len(binarySplitList[0])):
+    for x in binarySplitList:
+        extractedList = extract(binarySplitList, i)
         modeBit = max(set(extractedList), key=extractedList.count)
     mostCommonBits += str(modeBit)
 
