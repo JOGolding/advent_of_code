@@ -7,13 +7,12 @@ def readFile(fileName):
     nums = list(map(int, numsString))
     fileObj.close()
     return nums
-
+    
 numArray = readFile('day_1\input.txt')
 total = 0
 prevTotal = 0
 increaseCount = 0
 for x in range(len(numArray)-2):
-    print(str(numArray[x]) + ' ' + str(numArray[x+1]) + ' ' + str(numArray[x+2]))
     total = numArray[x] + numArray[x+1] + numArray[x+2]
     if prevTotal == 0:
         prevTotal = total
