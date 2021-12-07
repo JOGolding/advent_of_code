@@ -19,10 +19,10 @@ binarySplitList = readFile(file)
 mostCommonBits = ''
 
 for i in range(len(binarySplitList[0])):
-    for x in binarySplitList:
-        extractedList = extract(binarySplitList, i)
-        modeBit = max(set(extractedList), key=extractedList.count)
+    extractedList = extract(binarySplitList, i)
+    modeBit = max(set(extractedList), key=extractedList.count)
     mostCommonBits += str(modeBit)
+
 
 inverseMCB = ''.join(['1' if i == '0' else '0'
                      for i in mostCommonBits])
