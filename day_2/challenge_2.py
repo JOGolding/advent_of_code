@@ -13,4 +13,4 @@ with open(file, 'r+') as f:
             aim += value
         else:
             aim -= value
-print(horizPos*depth)
+print(horizPos*depth) 
