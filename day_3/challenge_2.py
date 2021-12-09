@@ -26,23 +26,20 @@ def countBits(lst):
 
 
 binarySplitList = readFile(file)
-binarySplitList2 = readFile(file)
 
-for i in range(len(binarySplitList[0])):
-    extractedList = extract(binarySplitList, i)
-    modeBit = countBits(extractedList)
-    binarySplitList = list(filter(lambda x: x[i] == modeBit, binarySplitList))
+def function(lst, x):
+    for i in range(len(lst[0])):
+        extractedList = extract(lst, i)
+        modeBit = countBits(extractedList)
+        if x == 'most':
+            lst = list(filter(lambda x: x[i] == modeBit, lst))
+        else:
+            lst = list(filter(lambda x: x[i] != modeBit, lst))
 
-x =(int("".join(binarySplitList[0]),2))
+        if len(lst) == 1:
+            return (int("".join(lst[0]),2))
 
-for i in range(len(binarySplitList2[0])):
-    extractedList = extract(binarySplitList2, i)
-    modeBit = countBits(extractedList)
-    if len(binarySplitList2) == 1:
-        y = (int("".join(binarySplitList2[0]),2))
-    binarySplitList2 = list(filter(lambda x: x[i] != modeBit, binarySplitList2))
-
-print(x*y)
+print(function(binarySplitList,'most')*function(binarySplitList,''))
         
         
 
