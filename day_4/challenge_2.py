@@ -52,7 +52,7 @@ def Bingo(nums, boards, gridSize):
 
                         for index, emptyRow in enumerate(emptyBoard):
                             columns = extract(emptyBoard, index)
-                            if (all(emptyRow) or all(columns)) and bingo == False :
+                            if (all(emptyRow) or all(columns)) and bingo == False:
                                 bingo = True
                                 for duplicateRow in duplicateBoard:
                                     for duplicateItem in duplicateRow:
@@ -65,15 +65,11 @@ def Bingo(nums, boards, gridSize):
                                     currentHighest = totalUnmarked*num
                                     mostPasses = passes
             passes += 1
-        
+
     return currentHighest
 
-
-testNums = getNums('day_4/testbingo.txt')
-testBoards = getBoards('day_4/test_input.txt')
 
 nums = getNums('day_4/bingo.txt')
 boards = getBoards('day_4/input.txt')
 
 print(Bingo(nums, boards, 5))
-print(Bingo(testNums, testBoards, 3))
